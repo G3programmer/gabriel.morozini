@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estou usando as linhas 8 e 9 para os meus arquivos de estilização css -->
+    <link rel="stylesheet" href="/src/css/index.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <title>Gabriel Morozini | Portifólio </title>
+</head>
+
+<!-- Eu uso class em português para a minha melhor eficiência-->
+
+<body>
+    <header class="cabecalho">
+        <nav class="menu">
+            <ul>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="home">
+        <div class="perfil">
+            <img alt="" class="foto-perfil">
+            <div class="info">
+                <h1 class="nome">Gabriel Morozini</h1>
+                <h3 class="subtitulo">Desenvolvedor Front-End</h3>
+                <div class="descricao"></div>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!--Dediquei o section para apresentar os meus projetos em forma de carts 
+    e deixa-los mais organizados com a imagem deles, o nome 
+    e uma breve descrição sobre eles-->
+  
+ <section class="proj" id="projects">
+    <div class="area">
+        <h1 class="titulo">Meus Projetos</h1>
+        <div class="cards">
+            <div class="card">
+                <h2>Projeto Vanguard</h2>
+                <br>
+                <p>Projeto realizado para o trabalho de conclusão de curso (TCC) do ensino médio técnico em Informática para Internet</p>
+                <button class="ver-mais">Ver mais</button>
+                <div class="conteudo-expandido">
+                    <img src="./src/img/Vanguard.png" alt="Projeto Vanguard">
+                    <a href="https://github.com/G3programmer/TCC">Veja</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Projeto avaliativo do curso de ADS <br>(Em Python)</h2>
+                <p>Esse é um mix de programas que foram mesclados para a entrega <br> do trabalho de lógica de programação da faculdade Uninter do curso de ADS</p>
+                <button class="ver-mais">Ver mais</button>
+                <div class="conteudo-expandido">
+                    <img src="./src/img/ADS.png" alt="Projeto Python">
+                   <a href="https://github.com/G3programmer/Atividades-Logica-programacao-Uninter--ADS--">Veja</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <footer class="rodape">
+        <p>Desenvolvido por Gabriel Morozini</p>
+        <p>© 2023</p>
+        <p>Todos os direitos reservados</p>
+    </footer>
+
+</body>
+<script src="src/js/index.js"></script>
+<script src="src/js/button.js"></script>
+</html>

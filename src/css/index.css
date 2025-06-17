@@ -1,0 +1,19 @@
+/*Esse é o aquivo base de estilização geral, o style.css é onde tem mais detalhes*/
+* {
+    margin: 0.5px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 1px;
+    background-color: rgb(0, 0, 0) !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

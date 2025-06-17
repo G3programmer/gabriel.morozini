@@ -1,0 +1,304 @@
+/*Decoração dos elementos dentro do header(cabeçalho)*/
+.cabecalho {
+    display: flex;
+    background: rgba(46, 46, 46, 0.568);
+    padding: 10px;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho .menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0.989;
+    z-index: 10;
+}
+
+.cabecalho .menu ul {
+    color: white;
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.cabecalho .menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding-bottom: 15px;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+}
+
+.cabecalho .menu ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.cabecalho .menu ul li a:hover::after {
+    width: 100%;
+}
+
+
+.home {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/fundo.jpg);
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    z-index: 1;
+}
+
+.home::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.600), rgba(0, 0, 0, .600) 100%, transparent 100%);
+}
+
+.home .perfil {
+    display: flex;
+    background: rgba(0, 0, 0, 0.444);
+    width: 100%;
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.home .perfil img {
+    width: 300px;
+    background-image: url(../img/foto.png);
+    background-position: 100%;
+    height: 370px;
+    border-radius: 50%;
+    border: 2px solid white;
+    position: absolute;
+    /* Alterado de static para fixed */
+    left: 20%;
+    /* Ajuste este valor conforme necessário */
+    transform: translateX(-50%);
+    /* Centraliza a imagem */
+}
+
+.home .perfil .info {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    font-size: 20px;
+    margin-left: 35pc;
+}
+
+.cursor {
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    margin-left: 2px;
+    width: 2px;
+    animation: piscar 1s infinite;
+}
+
+@keyframes piscar {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+
+.home .perfil .info .nome,
+.home .perfil .info .subtitulo {
+    align-self: center;
+    text-align: center;
+}
+
+.home .perfil .info .foto-perfil {
+    display: block;
+    position: static;
+    margin-left: 10pc;
+}
+
+.home .perfil .info .subtitulo {
+    margin-bottom: 10px;
+}
+
+.home .perfil .info .descricao {
+    text-align: justify;
+    margin-top: 10px;
+}
+
+.proj {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, 
+        rgba(0, 0, 0, 0.45) 0%, 
+        rgba(3, 58, 161, 0.3) 22%, 
+        rgba(60, 0, 255, 0.2) 47%, 
+        rgba(74, 0, 158, 0.3) 77%, 
+        rgba(0, 0, 0, 0.77) 100%);
+    width: 100%;
+    height: 100%;
+    margin-top: 3pc;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    position: relative;
+}
+
+/* Gradientes da seção de projetos */
+.proj::before,
+.proj::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    z-index: 1;
+}
+
+.proj::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+}
+
+.proj::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+}
+
+/* Área de cards */
+.proj .area {
+    display: flex;
+    flex-direction: column;
+    background: rgba(24, 24, 24, 0.221);
+    align-items: center;
+    margin-top: 3pc;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.proj .area .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Cards individuais */
+.card {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px;
+    text-align: center;
+    transition: all 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    max-height: 300px;
+}
+
+/* Estado expandido do card */
+.card.expandido {
+    max-height: 600px;
+}
+
+/* Conteúdo expandido */
+.conteudo-expandido {
+    opacity: 0;
+    height: 0;
+    transition: all 0.5s ease;
+    margin-top: 20px;
+}
+
+.conteudo-expandido img {
+    max-width: 90%;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+    transform: scale(0.8);
+    transition: transform 0.5s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.card.expandido .conteudo-expandido {
+    opacity: 1;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card.expandido .conteudo-expandido img {
+    transform: scale(1);
+}
+
+/* Botão Ver mais */
+.ver-mais {
+    background: transparent;
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.ver-mais:hover {
+    background: #00ffff;
+    color: black;
+}
+
+/* Efeitos de hover no card */
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Links dentro dos cards */
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
