@@ -11,60 +11,108 @@
 </head>
 
 <!-- Eu uso class em português para a minha melhor eficiência-->
+<!--Os links são utilizados para navegar dentro dessa única página-->
+<!--Os links que estão nos projetos, são links que levam aos meus projetos dentro do github-->
 
 <body>
     <header class="cabecalho">
         <nav class="menu">
             <ul>
                 <li><a href="#about">Sobre</a></li>
+                <li><a href="#education">Ensino</a></li>
                 <li><a href="#projects">Projetos</a></li>
                 <li><a href="#contact">Contato</a></li>
             </ul>
         </nav>
     </header>
+
+    <!--Na div da descrição eu escrevi utilizando efeito com js
+    o texto e a função dessa div podem ser encontradas no arquivo localizado em
+    /src/js/index.js-->
+
     <main class="home">
-        <div class="perfil">
+        <div class="perfil" id="about">
             <img alt="" class="foto-perfil">
             <div class="info">
                 <h1 class="nome">Gabriel Morozini</h1>
-                <h3 class="subtitulo">Desenvolvedor Front-End</h3>
+                <h3 class="subtitulo">Desenvolvedor Full-stack</h3>
                 <div class="descricao"></div>
                 </p>
             </div>
         </div>
     </main>
 
+    <article class="educacao" id="education">
+        <div class="area">
+            <h1 class="titulo">Minha Formação</h1>
+            <div class="formacao">
+                <div class="curso">
+                    <h2>Ensino Médio Técnico em Informática para Internet</h2>
+                    <p>Escola Técnica Estadual de São Paulo - ETEC</p>
+                    <p>Conclusão: 2023</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="circle">1</div>
+                        <div class="content">
+                            <h3>Ensino Medio</h3>
+                            <p>Ensino médio técnico em Informática P</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="circle">2</div>
+                        <div class="content">
+                            <h3>Etapa 2</h3>
+                            <p>Descrição da segunda etapa</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="circle">3</div>
+                        <div class="content">
+                            <h3>Etapa 3</h3>
+                            <p>Descrição da terceira etapa</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </article>
+
     <!--Dediquei o section para apresentar os meus projetos em forma de carts 
     e deixa-los mais organizados com a imagem deles, o nome 
     e uma breve descrição sobre eles-->
-  
- <section class="proj" id="projects">
-    <div class="area">
-        <h1 class="titulo">Meus Projetos</h1>
-        <div class="cards">
-            <div class="card">
-                <h2>Projeto Vanguard</h2>
-                <br>
-                <p>Projeto realizado para o trabalho de conclusão de curso (TCC) do ensino médio técnico em Informática para Internet</p>
-                <button class="ver-mais">Ver mais</button>
-                <div class="conteudo-expandido">
-                    <img src="./src/img/Vanguard.png" alt="Projeto Vanguard">
-                    <a href="https://github.com/G3programmer/TCC">Veja</a>
-                </div>
-            </div>
 
-            <div class="card">
-                <h2>Projeto avaliativo do curso de ADS <br>(Em Python)</h2>
-                <p>Esse é um mix de programas que foram mesclados para a entrega <br> do trabalho de lógica de programação da faculdade Uninter do curso de ADS</p>
-                <button class="ver-mais">Ver mais</button>
-                <div class="conteudo-expandido">
-                    <img src="./src/img/ADS.png" alt="Projeto Python">
-                   <a href="https://github.com/G3programmer/Atividades-Logica-programacao-Uninter--ADS--">Veja</a>
+    <section class="proj" id="projects">
+        <div class="area">
+            <h1 class="titulo">Meus Projetos</h1>
+            <div class="cards">
+                <div class="card">
+                    <h2>Projeto Vanguard</h2>
+                    <br>
+                    <p>Projeto realizado para o trabalho de conclusão de curso (TCC) do ensino médio técnico em
+                        Informática para Internet</p>
+                    <button class="ver-mais">Ver mais</button>
+                    <div class="conteudo-expandido">
+                        <img src="./src/img/Vanguard.png" alt="Projeto Vanguard">
+                        <a target="_blank" href="https://github.com/G3programmer/TCC">Veja</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Projeto avaliativo do curso de ADS <br>(Em Python)</h2>
+                    <p>Esse é um mix de programas que foram mesclados para a entrega <br> do trabalho de lógica de
+                        programação da faculdade Uninter do curso de ADS</p>
+                    <button class="ver-mais">Ver mais</button>
+                    <div class="conteudo-expandido">
+                        <img src="./src/img/ADS.png" alt="Projeto Python">
+                        <a target="_blank"
+                            href="https://github.com/G3programmer/Atividades-Logica-programacao-Uninter--ADS--">Veja</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
@@ -77,4 +125,5 @@
 </body>
 <script src="src/js/index.js"></script>
 <script src="src/js/button.js"></script>
+
 </html>

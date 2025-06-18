@@ -1,7 +1,7 @@
 /*Decoração dos elementos dentro do header(cabeçalho)*/
 .cabecalho {
     display: flex;
-    background: rgba(46, 46, 46, 0.568);
+    background: rgba(28, 28, 28, 0.568);
     padding: 10px;
     height: 70px;
     justify-content: space-between;
@@ -156,27 +156,127 @@
     margin-top: 10px;
 }
 
-.proj {
+.educacao {
     display: grid;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(90deg, 
-        rgba(0, 0, 0, 0.45) 0%, 
-        rgba(3, 58, 161, 0.3) 22%, 
-        rgba(60, 0, 255, 0.2) 47%, 
-        rgba(74, 0, 158, 0.3) 77%, 
-        rgba(0, 0, 0, 0.77) 100%);
-    width: 100%;
+    place-items: center;
+    background: #000000;
+background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 66, 120, 0.3) 22%, rgba(9, 87, 0, 0.2) 48%, rgba(0, 66, 120, 0.3) 77%, rgba(0, 0, 0, 0.77) 100%);width: 100%;
     height: 100%;
     margin-top: 3pc;
-    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 2pc;
+    font-family: 'Courier New', monospace;
     color: white;
     position: relative;
 }
 
-/* Gradientes da seção de projetos */
-.proj::before,
-.proj::after {
+.educacao::before, .educacao::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    z-index: 1;
+}
+
+.educacao::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+}
+
+.educacao::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.educacao .area {
+    display: flex;
+    flex-direction: column;
+    background: rgba(24,24,24,0.221);
+    place-items: center;
+    margin-top: 3pc;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.educacao .timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    position: relative;
+}
+
+.educacao .timeline::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background-color: #00ffff;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.educacao .timeline .timeline-item {
+    position: relative;
+    margin: 0 50px;
+    z-index: 1;
+}
+
+.educacao .timeline .timeline-item .circle {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border: 2px solid #00ffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00ffff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.educacao .timeline .timeline-item .circle:hover {
+    transform: scale(1.1);
+    background-color: #00ffff;
+    color: #000;
+}
+
+.educacao .timeline .timeline-item .circle .content {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    width: 150px;
+}
+
+.educacao .timeline .timeline-item .circle .content h3 {
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.educacao .timeline .timeline-item .circle .content p {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/*Daqui para baixo é a parte onde apresento os meus projetos*/
+.proj {
+    display: grid;
+    place-items: center;
+    background: linear-gradient(90deg, rgba(0,0,0,0.45), rgba(3,58,161,0.3) 22%, rgba(60,0,255,0.2) 47%, rgba(74,0,158,0.3) 77%, rgba(0,0,0,0.77));
+    width: 100%;
+    height: 100%;
+    margin-top: 3pc;
+    font-family: 'Courier New', monospace;
+    color: white;
+    position: relative;
+}
+
+.proj::before, .proj::after {
     content: '';
     position: absolute;
     left: 0;
@@ -187,22 +287,20 @@
 
 .proj::before {
     top: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
 }
 
 .proj::after {
     bottom: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
 }
 
-/* Área de cards */
 .proj .area {
     display: flex;
     flex-direction: column;
-    background: rgba(24, 24, 24, 0.221);
-    align-items: center;
+    background: rgba(24,24,24,0.221);
+    place-items: center;
     margin-top: 3pc;
-    justify-content: center;
     text-align: center;
     position: relative;
     z-index: 2;
@@ -213,92 +311,106 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     padding: 20px;
-    position: relative;
     z-index: 2;
 }
 
-/* Cards individuais */
-.card {
-    background: rgba(0, 0, 0, 0.5);
+.proj .area .cards .card {
+    background: rgba(0,0,0,0.5);
     border-radius: 15px;
     padding: 20px;
     margin: 15px;
     text-align: center;
     transition: all 0.5s ease;
-    position: relative;
     overflow: hidden;
     max-height: 300px;
 }
 
-/* Estado expandido do card */
-.card.expandido {
+.proj .area .cards .card.expandido {
     max-height: 600px;
 }
 
-/* Conteúdo expandido */
-.conteudo-expandido {
+.proj .area .cards .card .conteudo-expandido {
     opacity: 0;
     height: 0;
     transition: all 0.5s ease;
     margin-top: 20px;
 }
 
-.conteudo-expandido img {
+.proj .area .cards .card .conteudo-expandido img {
     max-width: 90%;
     max-height: 300px;
     object-fit: contain;
     border-radius: 10px;
     transform: scale(0.8);
     transition: transform 0.5s ease;
-    display: block;
     margin: 0 auto;
 }
 
-.card.expandido .conteudo-expandido {
+.proj .area .cards .card.expandido .conteudo-expandido {
     opacity: 1;
     height: auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    place-items: center;
 }
 
-.card.expandido .conteudo-expandido img {
+.proj .area .cards .card.expandido .conteudo-expandido img {
     transform: scale(1);
 }
 
-/* Botão Ver mais */
-.ver-mais {
+.proj .area .cards .card .conteudo-expandido a {
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.proj .area .cards .card .conteudo-expandido a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background: rgb(110, 77, 255);
+    transition: width 0.3s ease;
+}
+
+.proj .area .cards .card .conteudo-expandido a:hover::after {
+    width: 100%;
+}
+
+.proj .area .cards .card .ver-mais {
     background: transparent;
-    border: 2px solid #00ffff;
-    color: #00ffff;
+    border: 2px solid #8000ff;
+    color: #00ff77;
     padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 15px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', monospace;
 }
 
-.ver-mais:hover {
-    background: #00ffff;
+.proj .area .cards .card .ver-mais:hover {
+    background: #00ff33;
     color: black;
 }
 
-/* Efeitos de hover no card */
-.card:hover {
+.proj .area .cards .card:hover {
     transform: scale(1.05);
 }
 
-/* Links dentro dos cards */
-.card a {
+.proj .area .cards .card a {
     display: inline-block;
     margin-top: 10px;
-    color: #00ffff;
-    text-decoration: none;
+    text-decoration: none !important;
+    color: #00ff51;
     font-weight: bold;
+    text-decoration: none;
 }
 
-.card a:hover {
+.proj .area .cards .card a:hover {
     text-decoration: underline;
 }
