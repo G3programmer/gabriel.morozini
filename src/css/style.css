@@ -846,6 +846,8 @@
         transition:  0.5s;   
 }
 
+/*Aqui, eu finalizo com o roda-pe, a última parte do site*/
+
 .roda-pe {
     display: flex;
     justify-content: center;
