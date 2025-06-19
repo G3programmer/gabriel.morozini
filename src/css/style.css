@@ -48,7 +48,7 @@
     width: 100%;
 }
 
-
+/*Essa é a estilização da parte principal da página*/
 .home {
     display: flex;
     flex-direction: column;
@@ -75,7 +75,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.600), rgba(0, 0, 0, .600) 100%, transparent 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.600), rgba(0, 0, 0, .600) 100%, transparent 100%);
 }
 
 .home .perfil {
@@ -90,20 +90,16 @@
     z-index: 2;
 }
 
-.home .perfil img {
-    width: 300px;
+.home .perfil .foto-perfil {
+    width: 450px;
     background-image: url(../img/foto.png);
-    background-position: 100%;
-    height: 370px;
-    border-radius: 50%;
-    border: 2px solid white;
+    background-size: cover; 
+    height: 250px;
     position: absolute;
-    /* Alterado de static para fixed */
     left: 20%;
-    /* Ajuste este valor conforme necessário */
     transform: translateX(-50%);
-    /* Centraliza a imagem */
 }
+
 
 .home .perfil .info {
     display: flex;
@@ -121,6 +117,8 @@
     width: 2px;
     animation: piscar 1s infinite;
 }
+
+/*Animação que adicionei para a digitação na apresentação*/
 
 @keyframes piscar {
 
@@ -141,12 +139,6 @@
     text-align: center;
 }
 
-.home .perfil .info .foto-perfil {
-    display: block;
-    position: static;
-    margin-left: 10pc;
-}
-
 .home .perfil .info .subtitulo {
     margin-bottom: 10px;
 }
@@ -156,20 +148,33 @@
     margin-top: 10px;
 }
 
+.transicao-blur {
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.975), transparent);
+    filter: blur(8px); 
+    position: relative;
+    z-index: 2;
+    margin-top: -50px; /* puxa um pouco para sobrepor o final da .home */
+}
+
+/*Aqui eu estou para apresenta as minhas formações*/
 .educacao {
     display: grid;
     place-items: center;
     background: #000000;
-background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 66, 120, 0.3) 22%, rgba(9, 87, 0, 0.2) 48%, rgba(0, 66, 120, 0.3) 77%, rgba(0, 0, 0, 0.77) 100%);width: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 66, 120, 0.3) 22%, rgba(9, 87, 0, 0.2) 48%, rgba(0, 66, 120, 0.3) 77%, rgba(0, 0, 0, 0.77) 100%);
+    width: 100%;
     height: 100%;
     margin-top: 3pc;
     margin-bottom: 2pc;
-    font-family: 'Courier New', monospace;
+    font-family: 'Courier New', Courier, monospace;
     color: white;
     position: relative;
 }
 
-.educacao::before, .educacao::after {
+.educacao::before,
+.educacao::after {
     content: '';
     position: absolute;
     left: 0;
@@ -180,18 +185,18 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 66, 120, 0.3)
 
 .educacao::before {
     top: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+    background: linear-gradient(to bottom, rgb(0, 0, 0), transparent);
 }
 
 .educacao::after {
     bottom: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    background: linear-gradient(to top, rgb(0, 0, 0), transparent);
 }
 
 .educacao .area {
     display: flex;
     flex-direction: column;
-    background: rgba(24,24,24,0.221);
+    background: rgba(24, 24, 24, 0.084);
     place-items: center;
     margin-top: 3pc;
     text-align: center;
@@ -201,45 +206,58 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 66, 120, 0.3)
 
 .educacao .timeline {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 50px 0;
+    /* Centraliza verticalmente */
     position: relative;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .educacao .timeline::before {
     content: '';
     position: absolute;
-    width: 80%;
-    height: 2px;
-    background-color: #00ffff;
-    top: 50%;
+    top: 13%;
+    left: 5%;
+    width: 90%;
+    height: 3px;
+    background: #00ff91;
+    z-index: 0;
     transform: translateY(-50%);
 }
 
-.educacao .timeline .timeline-item {
+.educacao .timeline-item {
     position: relative;
-    margin: 0 50px;
     z-index: 1;
+    display: flex;
+    margin-bottom: 3pc;
+    flex-direction: column;
+    align-items: center;
+    width: 33%;
+    text-align: center;
+    min-height: 180px;
 }
 
-.educacao .timeline .timeline-item .circle {
+
+.educacao .timeline-item .circle {
     width: 50px;
     height: 50px;
     background-color: #000;
-    border: 2px solid #00ffff;
+    border: 2px solid #00ff91;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #00ffff;
+    color: #00ff91;
     font-weight: bold;
+    font-size: 1.3em;
     transition: all 0.3s ease;
+    z-index: 2;
 }
 
 .educacao .timeline .timeline-item .circle:hover {
     transform: scale(1.1);
-    background-color: #00ffff;
+    background-color: #00ff91;
     color: #000;
 }
 
@@ -263,20 +281,65 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 66, 120, 0.3)
     opacity: 0.8;
 }
 
+/*Idioma*/
+.idioma {
+    margin-top: 3pc;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.barra-idioma {
+    margin-top: 20px;
+    width: 80%;
+    margin-inline: auto;
+}
+
+.nome-idioma {
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.barra {
+    width: 100%;
+    background-color: #2e2e2e;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 24px;
+    box-shadow: inset 0 0 5px #000;
+}
+
+.progresso {
+    background-color: #0099ff;
+    color: white;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
+    line-height: 24px;
+    border-radius: 20px 0 0 20px;
+}
+
+
+
+
 /*Daqui para baixo é a parte onde apresento os meus projetos*/
 .proj {
     display: grid;
     place-items: center;
-    background: linear-gradient(90deg, rgba(0,0,0,0.45), rgba(3,58,161,0.3) 22%, rgba(60,0,255,0.2) 47%, rgba(74,0,158,0.3) 77%, rgba(0,0,0,0.77));
+    background: #00000073;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(60, 0, 255, 0.2) 22%, rgba(43, 0, 92, 0.2) 48%, rgba(0, 66, 120, 0.3) 77%, rgba(0, 0, 0, 0.77) 100%);
     width: 100%;
     height: 100%;
     margin-top: 3pc;
-    font-family: 'Courier New', monospace;
+    margin-bottom: 4pc;
+    font-family: 'Courier New', Courier, monospace;
     color: white;
     position: relative;
 }
 
-.proj::before, .proj::after {
+.proj::before,
+.proj::after {
     content: '';
     position: absolute;
     left: 0;
@@ -287,18 +350,18 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 66, 120, 0.3)
 
 .proj::before {
     top: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+    background: linear-gradient(to bottom, rgb(0, 0, 0), transparent);
 }
 
 .proj::after {
     bottom: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    background: linear-gradient(to top, rgb(0, 0, 0), transparent);
 }
 
 .proj .area {
     display: flex;
     flex-direction: column;
-    background: rgba(24,24,24,0.221);
+    background: rgba(24, 24, 24, 0.084);
     place-items: center;
     margin-top: 3pc;
     text-align: center;
@@ -315,7 +378,7 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 66, 120, 0.3)
 }
 
 .proj .area .cards .card {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     padding: 20px;
     margin: 15px;
@@ -360,7 +423,7 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 66, 120, 0.3)
 }
 
 .proj .area .cards .card .conteudo-expandido a {
-    font-family: 'Courier New', monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
     padding-bottom: 5px;
     position: relative;
@@ -390,7 +453,7 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 66, 120, 0.3)
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 15px;
-    font-family: 'Courier New', monospace;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .proj .area .cards .card .ver-mais:hover {
@@ -413,4 +476,390 @@ background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 66, 120, 0.3)
 
 .proj .area .cards .card a:hover {
     text-decoration: underline;
+}
+
+/*Aqui fica a parte de contato*/
+.contato {
+    display: grid;
+    place-items: center;
+    background: #00000073;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(204, 0, 194, 0.241) 22%, rgba(92, 0, 80, 0.2) 48%, rgba(120, 0, 90, 0.3) 77%, rgba(0, 0, 0, 0.77) 100%);
+    width: 100%;
+    height: 100%;
+    margin-top: 4pc;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    position: relative;
+}
+
+.contato::before,
+.contato::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    z-index: 1;
+}
+
+.contato::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgb(0, 0, 0), transparent);
+}
+
+.contato::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgb(0, 0, 0), transparent);
+}
+
+.contato .area {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.184);
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 3pc;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/*Estilização do formulário*/
+.contato .box {
+    position: relative;
+    display: flex;
+    margin-top: 5pc;
+    width: 380px;
+    height: 500px;
+    background: #000000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contato .box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 490px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgb(212, 0, 255) 100%);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+
+}
+
+.contato .box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 400px;
+    height: 490px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgb(212, 0, 255) 100%);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+
+
+
+.contato .box::after {
+    animation-delay: -3s;
+}
+
+.contato .box .borderLine::before,
+.contato .box .borderLine::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 400px;
+    height: 500px; /* atualizado */
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgb(131, 0, 253) 100%);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+.contato .box .borderLine::before {
+    animation-delay: -1.5s;
+}
+
+.contato .box .borderLine::after {
+    animation-delay: -4.5s;
+}
+
+
+.contato .box .borderLine {
+    position: absolute;
+    top: 0;
+    inset: 0;
+}
+
+
+.contato .box .borderLine::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 400px;
+    height: 420px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgb(131, 0, 253) 100%);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+
+}
+
+.contato .box .borderLine::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 400px;
+    height: 420px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgb(131, 0, 253) 100%);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -4.5s;
+
+}
+
+/*Animação das bordas*/
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+.contato .box .formulario {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    inset: 4px;
+    background: #121212;
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.contato .box .titulo {
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.contato .box .formulario .inputBox {
+    position: relative;
+    width: 100%;
+    margin-top: 35px;
+}
+
+
+.contato .box .formulario .inputBox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: #000000;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+}
+.inputBox textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+    color: white;
+    font-size: 1em;
+    padding: 10px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.contato .box .formulario .inputBox input,
+.contato .box .formulario .inputBox textarea {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: #000000;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+    resize: none;
+}
+
+.inputBox input,
+.inputBox textarea {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #00ffff;
+    outline: none;
+    resize: none;
+    border-radius: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.contato .box .formulario .inputBox span {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    padding: 10px 0px;
+    pointer-events: none;
+    color: #8f8f8f;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+
+.contato .box .formulario .inputBox input:focus~span,
+.contato .box .formulario .inputBox input:valid~span{
+    color: #fff;
+    font-size: 0.75em;
+    transform: translateY(-34px);
+}
+
+.contato .box .formulario .inputBox textarea + span {
+    position: absolute;
+    left: 0;
+    top: 70px; /* ajuste conforme necessário */
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.contato .box .formulario .inputBox textarea:focus~span,
+.contato .box .formulario .inputBox textarea:valid~span {
+    color: #fff;
+    font-size: 0.75em;
+    transform: translateY(-90px);
+}
+
+.contato .box .formulario .inputBox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.contato .box .formulario .inputBox input:focus~i,
+.contato .box .formulario .inputBox input:valid~i {
+    height: 44px;
+}
+
+
+.contato .box .formulario .inputBox textarea:focus~i,
+.contato .box .formulario .inputBox textarea:valid~i {
+    height: 100px;
+}
+
+.contato .box .formulario .links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contato .box .formulario .links a {
+    margin: 10px 0;
+    font-size: 0.75em;
+    color: #8f8f8f;
+    text-decoration: none;
+
+}
+
+.contato .box .formulario .links a:hover,
+.contato .box .formulario .links a:nth-child(2) {
+    color: #fff;
+}
+
+.formulario .inputBox input[type="submit"] {
+    width: 100px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    padding: 9px 15px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.contato .box .formulario input[type="submit"]:active {
+    opacity: 0.8;
+
+}
+
+.contato .box .formulario .login {
+    background: rgba(69, 69, 69, 0.381);
+    cursor: pointer;
+    width:18pc;
+    margin-top: 2pc;
+    justify-self: center;
+    border:none;
+    border-radius: 20px;
+    color: #fff;
+    transition: 0.5s;
+    padding: 5px 0px 5px 0px;
+    }
+    
+.contato .box .formulario .login:hover {
+        color: black;
+        font-weight: bold;
+        background: #fff;
+        transition:  0.5s;   
+}
+
+.roda-pe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(30, 30, 30, 0.86);
+    padding: 10px;
+    width: 100%;
+    height: 100px;
+    margin-bottom: -50px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.roda-pe p {
+    margin: 0;
+    font-size: 16px;
 }

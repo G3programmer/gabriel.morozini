@@ -32,7 +32,7 @@
 
     <main class="home">
         <div class="perfil" id="about">
-            <img alt="" class="foto-perfil">
+            <div class="foto-perfil"></div> 
             <div class="info">
                 <h1 class="nome">Gabriel Morozini</h1>
                 <h3 class="subtitulo">Desenvolvedor Full-stack</h3>
@@ -42,41 +42,84 @@
         </div>
     </main>
 
+
+    <div class="transicao-blur"></div>
+
+
     <article class="educacao" id="education">
         <div class="area">
             <h1 class="titulo">Minha Formação</h1>
             <div class="formacao">
-                <div class="curso">
-                    <h2>Ensino Médio Técnico em Informática para Internet</h2>
-                    <p>Escola Técnica Estadual de São Paulo - ETEC</p>
-                    <p>Conclusão: 2023</p>
-                </div>
 
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="circle">1</div>
-                        <div class="content">
-                            <h3>Ensino Medio</h3>
-                            <p>Ensino médio técnico em Informática P</p>
+                        <div class="content"> <br>
+                            <h3>Ensino Médio</h3>
+                            <p>Técnico em Informática para Internet<br>2021–2024</p>
+
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="circle">2</div>
-                        <div class="content">
-                            <h3>Etapa 2</h3>
-                            <p>Descrição da segunda etapa</p>
+                        <div class="content"> <br>
+                            <h3>Centro Universitário Internacional</h3>
+                            <p>Análise e Desenvolvimento de Sistemas <br>2025-2027</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="circle">3</div>
-                        <div class="content">
-                            <h3>Etapa 3</h3>
-                            <p>Descrição da terceira etapa</p>
+                        <div class="content"> <br>
+                            <h3>Universidade Estadual do Centro Oeste</h3>
+                            <p>Matemática Aplicada e Computacional <br>2025-2028</p>
                         </div>
                     </div>
                 </div>
 
+                <!--O complemento da barra azul defini por width 
+                pelo html direto que é estilizado separadamente-->
+
+                <div class="idioma">
+                    <h2>Idiomas</h2>
+
+                    <div class="barra-idioma">
+                        <span class="nome-idioma">Inglês</span>
+                        <div class="barra">
+                            <div class="progresso" style="width: 60%;">60%</div>
+                        </div>
+                    </div>
+
+                    <div class="barra-idioma">
+                        <span class="nome-idioma">Italiano</span>
+                        <div class="barra">
+                            <div class="progresso" style="width: 75%;">75%</div>
+                        </div>
+                    </div>
+
+                    <div class="barra-idioma">
+                        <span class="nome-idioma">Alemão</span>
+                        <div class="barra">
+                            <div class="progresso" style="width: 30%;">30%</div>
+                        </div>
+                    </div>
+                    <div class="barra-idioma">
+                        <span class="nome-idioma">Grego</span>
+                        <div class="barra">
+                            <div class="progresso" style="width: 20%;">20%</div>
+                        </div>
+                    </div>
+                    <div class="barra-idioma">
+                        <span class="nome-idioma">Espanhol</span>
+                        <div class="barra">
+                            <div class="progresso" style="width: 85%;">85%</div>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </div>
+
     </article>
 
     <!--Dediquei o section para apresentar os meus projetos em forma de carts 
@@ -114,12 +157,45 @@
         </div>
     </section>
 
+    <section class="contato" id="contact">
+        <div class="area">
+            <h1 class="titulo">Contato</h1>
+            <p class="texto">Você pode entrar em contato comigo através de:</p>
 
 
-    <footer class="rodape">
-        <p>Desenvolvido por Gabriel Morozini</p>
-        <p>© 2023</p>
-        <p>Todos os direitos reservados</p>
+            <div class="box">
+                <span class="borderLine"></span>
+                <form class="formulario" method="post">
+                    <h1 class="titulo">Formulário de Contato</h1>
+
+                    <div class="inputBox">
+                        <input type="text" required="required">
+                        <span>Nome</span>
+                        <i></i>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="email" required="required">
+                        <span>Email</span>
+                        <i></i>
+                    </div>
+
+                    <div class="inputBox">
+                        <textarea rows="4" required="required"></textarea>
+                        <span>Mensagem</span>
+                        <i></i>
+                    </div>
+
+                    <input class="login" type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="roda-pe">
+        <p>Desenvolvido por Gabriel Morozini© 2025 Todos os direitos reservados</p>
     </footer>
 
 </body>
